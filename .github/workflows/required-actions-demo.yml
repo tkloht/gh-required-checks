@@ -14,13 +14,9 @@ jobs:
     needs: job-one
     if: always()
     steps:
-      - run: echo "Hello, this job two with status ${{ job.status }}."
-      - run: echo "job one had status ${{ needs.job-one.result }}."
       - name: job1 did not succeed
         if: needs.job-one.result != 'success'
-        run: |
-          echo "job 1 did not succeeded"
-          exit 1
+        run: core.setFailed("job 1 did not succeeded")
       - name: job 1 did succeed
         run: |
           echo "job 1 finished successfully"
