@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, this job one. it will pass"
-      - run: exit 0
+      - run: exit 1
   job-two:
     runs-on: ubuntu-latest
     needs: job-one
