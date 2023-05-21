@@ -1,0 +1,11 @@
+name: Required Actions Demo
+on: [push]
+jobs:
+  job-one:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, this job one with status ${{ job.status }}."
+  job-two:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello, this job two with status ${{ job.status }}."
