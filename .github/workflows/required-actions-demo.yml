@@ -15,4 +15,4 @@ jobs:
     if: always()
     steps:
       - run: echo "Hello, this job two with status ${{ job.status }}."
-      - run: echo "job one had status ${{ needs.job-one.status }}."
+      - run: echo "job one had status ${{ needs.job-one.result }}."
