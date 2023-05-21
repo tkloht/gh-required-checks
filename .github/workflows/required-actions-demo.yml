@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: job1 did not succeed
         if: needs.job-one.result != 'success'
-        uses: actions/github-script@v3
+        uses: actions/github-script@v6
         with:
           script: core.setFailed('job 1 did not succeeded')
       - name: job 1 did succeed
