@@ -17,7 +17,7 @@ jobs:
       - run: echo "Hello, this job two with status ${{ job.status }}."
       - run: echo "job one had status ${{ needs.job-one.result }}."
       - name: job1 succeeded
-        if: needs.job-one.result == success
+        if: needs.job-one.result == "success"
         run: |
           echo "job 1 succeeded"
           exit 0
