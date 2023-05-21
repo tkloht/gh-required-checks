@@ -2,6 +2,9 @@ name: Required Actions Demo
 on: [push]
 jobs:
   job-one:
+    strategy:
+      matrix:
+        version: [10, 12, 14]
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello, this job one. it will fail"
